@@ -67,7 +67,7 @@ for keyword in tqdm(keywords, position=2, desc="keyword"):
 
 
                 issue = session.get(search_result['url'], headers=api_header).json()
-                comments = list(itertools.chain.from_iterable(get_from_pages(issue['comments_url'], headers=api_header)))
+                comments = list(itertools.chain.from_iterable(get_from_pages(issue['comments_url'], {'per_page': 100}, headers=api_header)))
 
                 issues.append({
                     'url': issue['url'],
