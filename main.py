@@ -44,7 +44,7 @@ session = get_session()
 issues = []
 
 for keyword in tqdm(keywords, position=2, desc="keyword"):
-    for page in tqdm(get_from_pages(api_search_url, {'q': f'{keyword}+created:{adoption_gdpr}..{end_date}', 'per_page' : 100}), position=1, desc="pages"):
+    for page in tqdm(get_from_pages(api_search_url, {'q': f'\"{keyword}\"+created:{adoption_gdpr}..{end_date}', 'per_page' : 100}), position=1, desc="pages"):
         for search_result in tqdm(page['items'], position=0, desc="results"):
             if (repository_requirements(session, search_result['repository_url'])):
                 '''
