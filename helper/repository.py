@@ -17,7 +17,7 @@ def is_development_active(repository_url: str):
 def is_issue_active(repository_url: str):
     '''Returns true if the #issues between the effective date of GDPR and the end date of the study excedes the minimum requirement'''
     issue_count = 0
-    for page in get_from_pages(repository_url + '/issues', {'since': enforcable_gdpr, 'until': end_date, 'per_page': 100}):
+    for page in get_from_pages(repository_url + '/issues', {'since': enforcable_gdpr, 'until': end_date, 'per_page': min_issues}):
         issue_count += len(page)
         if (issue_count >= min_issues):
             return True

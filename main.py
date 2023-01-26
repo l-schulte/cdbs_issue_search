@@ -30,8 +30,8 @@ def repository_requirements(session: Session, repository_url: str) -> bool:
             repository["private"] == False and\
             repository["fork"] == False and\
             repository["license"] != None and\
-            is_development_active(repository_url) and\
-            is_issue_active(repository_url)
+            is_issue_active(repository_url) and\
+            is_development_active(repository_url) 
     except:
         print(repository)
         return False
