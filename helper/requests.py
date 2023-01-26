@@ -30,7 +30,7 @@ def get_from_pages(url, params = {}, headers = {}):
     if (isinstance(first_page, list)):
         next_page = first_page
         page = 0
-        while len(next_page) > 0:
+        while len(next_page) == 100:
             page += 1
             next_page = get_next(page)
             yield next_page
