@@ -2,6 +2,7 @@ from tqdm import tqdm
 import pickle
 import itertools
 from requests import Session
+import datetime
 
 from settings import api_search_url, api_header, adoption_gdpr, end_date, keywords
 from helper.requests import get_from_pages, get_session, search
@@ -41,9 +42,9 @@ def repository_requirements(session: Session, repository_url: str) -> bool:
     return requirements_fulfilled
 
 session = get_session()
-issues = []
 
 for keyword in tqdm(keywords, position=2, desc="keyword"):
+    issues = []
     for page in tqdm(search(api_search_url, keyword, adoption_gdpr, end_date), position=1, desc="pages"):
         for search_result in tqdm(page['items'], position=0, desc="results"):
             if (repository_requirements(session, search_result['repository_url'])):
@@ -71,6 +72,8 @@ for keyword in tqdm(keywords, position=2, desc="keyword"):
 
                 issues.append({
                     'url': issue['url'],
+                    'created_at': datetime.fromisoformat(issue['created_at'][0:-1]),
+                    'title': issue['title'],
                     'issue': issue,
                     'comments': comments
                 })
