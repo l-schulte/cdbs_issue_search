@@ -8,8 +8,8 @@ keywords = ["access to personal data", "anonymization", "California Consumer Pri
             "privacy violation", "pseudonymization", "right to be forgotten", "tracking"]
 
 adoption_gdpr = "2016-04-01T00:00:00"
-enforcable_gdpr = "2018-06-01T23:59:59Z"
-end_date = "2022-12-31T23:59:59Z"
+enforcable_gdpr = "2018-06-01T23:59:59"
+end_date = "2022-12-31T23:59:59"
 
 min_contributers = 10
 min_commits = 100

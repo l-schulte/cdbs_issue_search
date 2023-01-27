@@ -2,7 +2,7 @@ from tqdm import tqdm
 import pickle
 import itertools
 from requests import Session
-import datetime
+from datetime import datetime
 
 from settings import api_search_url, api_header, adoption_gdpr, end_date, keywords
 from helper.requests import get_from_pages, get_session, search
