@@ -2,10 +2,39 @@ private_token = "github_key"
 
 api_search_url = 'https://api.github.com/search/issues'
 api_header = {'accept': 'application/vnd.github+json', 'Authorization': f'Bearer {private_token}', 'X-GitHub-Api-Version': '2022-11-28'}
-keywords = ["access to personal data", "anonymization", "California Consumer Privacy Act", "CCPA", "consent withdrawal", "cookie banner", "cookie law",\
-            "cookie notice", "cookie prompt", "data breach", "data privacy", "data sharing", "ePrivacy Directive", "fingerprinting", "GDPR", "General Data Protection Regulation",\
-            "personal data", "privacy breach", "privacy controls", "privacy law", "privacy notice", "privacy policy", "privacy problem", "privacy settings",\
-            "privacy violation", "pseudonymization", "right to be forgotten", "tracking"]
+
+keywords = [
+    "anonymization",
+    "CCPA",
+    "consent withdrawal",
+    "cookie banner",
+    "cookie law",
+    "cookie notice",
+    "cookie prompt",
+    "data breach",
+    "data privacy",
+    "data protection",
+    "data sharing",
+    "ePrivacy Directive",
+    "fingerprinting",
+    "GDPR",
+    "personal data",
+    "personally identifiable information",
+    "PII",
+    "privacy act",
+    "privacy breach",
+    "privacy controls",
+    "privacy issue",
+    "privacy law",
+    "privacy notice",
+    "privacy policy",
+    "privacy problem",
+    "privacy settings",
+    "privacy violation",
+    "pseudonymization",
+    "right to be forgotten",
+    "tracking"
+]
 
 adoption_gdpr = "2016-04-01T00:00:00"
 enforcable_gdpr = "2018-06-01T23:59:59"
