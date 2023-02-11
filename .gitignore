@@ -7,6 +7,7 @@ settings.py
 # pickle
 *.p
 *.xlsx
+*.7z
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
