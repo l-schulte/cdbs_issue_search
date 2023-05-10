@@ -5,8 +5,8 @@ from requests import Session
 from datetime import datetime
 
 from settings import api_search_url, api_header, adoption_gdpr, end_date, keywords
-from importer.helper.requests import get_from_pages, get_session, search
-from importer.helper.repository import is_development_active, is_issue_active
+from importer.repository.helper.requests import get_from_pages, get_session, search
+from importer.repository.helper.repository import is_development_active, is_issue_active
 
 
 repository_cache = {}

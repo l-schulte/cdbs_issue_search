@@ -1,5 +1,5 @@
 from settings import enforcable_gdpr, end_date, min_contributers, min_commits, min_issues
-from importer.helper.requests import get_from_pages
+from importer.repository.helper.requests import get_from_pages
 
 
 def is_development_active(repository_url: str):
