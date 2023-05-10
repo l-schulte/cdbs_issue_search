@@ -1,6 +1,7 @@
 from settings import enforcable_gdpr, end_date, min_contributers, min_commits, min_issues
-from helper.requests import get_from_pages
-    
+from importer.helper.requests import get_from_pages
+
+
 def is_development_active(repository_url: str):
     '''Returns True if the #authors and #commits between the effective date of GDPR and end date of the study excede the minimum requirement'''
     authors = {}
@@ -13,6 +14,7 @@ def is_development_active(repository_url: str):
                 return True
 
     return False
+
 
 def is_issue_active(repository_url: str):
     '''Returns true if the #issues between the effective date of GDPR and the end date of the study excedes the minimum requirement'''
