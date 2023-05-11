@@ -34,12 +34,12 @@ def response_generator(url):
             url + f"&page={page}&per_page={MAX_RESULTS}",
             headers={'Authorization': f'Bearer {GITHUB_KEY}'}
         )
-        data = response.json()
 
         if not response.ok:
             # print(f'{response.status_code}, {response.reason} at {response.url}')
             return []
 
+        data = response.json()
         for issue in data:
             yield issue
 

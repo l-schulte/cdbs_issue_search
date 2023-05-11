@@ -2,7 +2,7 @@ import pandas as pd
 import pickle
 from tqdm import tqdm
 
-from postprocessor.helper.github import response_generator
+from importer.contributer.helper.github import response_generator
 
 
 def get_user_num_commits_role(username: str, project: str):
@@ -23,6 +23,8 @@ def run():
     project_name: str
     reporter: str
     discussants: list[str]
+    cnt = 0
+
     for project_name, reporter, discussants in tqdm(zip(df['project'], df['reporter'], df['discussants']), desc='Issues'):
         if project_name not in projects:
             projects[project_name] = {}
@@ -33,5 +35,11 @@ def run():
                     'commits': get_user_num_commits_role(username, project_name),
                     'issues': get_user_num_issues_role(username, project_name)
                 }
+
+        cnt += 1
+
+        if cnt % 500 == 0:
+            print("... saving current data")
+            pickle.dump(projects, open('projects.p', 'wb'))
 
     pickle.dump(projects, open('projects.p', 'wb'))
