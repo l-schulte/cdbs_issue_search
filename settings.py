@@ -1,7 +1,8 @@
-private_token = "github_key"
+private_token = "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"
 
 api_search_url = 'https://api.github.com/search/issues'
-api_header = {'accept': 'application/vnd.github+json', 'Authorization': f'Bearer {private_token}', 'X-GitHub-Api-Version': '2022-11-28'}
+api_header = {'accept': 'application/vnd.github+json',
+              'Authorization': f'Bearer {private_token}', 'X-GitHub-Api-Version': '2022-11-28'}
 
 keywords = [
     "anonymization",

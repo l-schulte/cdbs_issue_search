@@ -3,6 +3,6 @@
 # repository_import.run()
 
 
-from importer.contributer import contributer_import
+from importer.contributor import contributor_import
 
-contributer_import.run()
+contributor_import.run()
